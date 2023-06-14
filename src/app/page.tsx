@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { TimerDisplay } from "./components/timer";
 import { CambiazoAnnounce } from "./components/cambiazo-announce";
 import { random } from "lodash-es";
@@ -9,7 +9,7 @@ export type TimerStatus = "running" | "stopped";
 
 export default function Home() {
   const [timerStatus, setTimerStatus] = useState<TimerStatus>("stopped");
-  const [secondsLeft, setSecondsLeft] = useState(5);
+  const [secondsLeft, setSecondsLeft] = useState(random(10, 30));
   const [isCambiazo, setIsCambiazo] = useState(false);
 
   useEffect(() => {
